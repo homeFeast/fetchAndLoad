@@ -7,39 +7,40 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import CustomerData from './CustomerData';
 
 export function Customer() {
   const [searchQuery, setSearchQuery] = useState('');
   
   // Dummy data representing different sections of the website
-  const websiteContent = [
-    {
-      title: 'Home',
-      content: 'Welcome to our website! This is the home page content.'
-    },
-    {
-      title: 'About',
-      content: 'Learn more about us and our mission.'
-    },
-    {
-      title: 'Portfolio',
-      content: 'Explore our portfolio showcasing our work.'
-    },
-    {
-      title: 'Contact',
-      content: 'Get in touch with us for inquiries or feedback.'
-    },
-    {
-      title: 'Feedback',
-      content: 'Leave us your feedback and suggestions.'
-    }
-  ];
+  // const websiteContent = [
+  //   {
+  //     title: 'Home',
+  //     content: 'Welcome to our website! This is the home page content.'
+  //   },
+  //   {
+  //     title: 'About',
+  //     content: 'Learn more about us and our mission.'
+  //   },
+  //   {
+  //     title: 'Portfolio',
+  //     content: 'Explore our portfolio showcasing our work.'
+  //   },
+  //   {
+  //     title: 'Contact',
+  //     content: 'Get in touch with us for inquiries or feedback.'
+  //   },
+  //   {
+  //     title: 'Feedback',
+  //     content: 'Leave us your feedback and suggestions.'
+  //   }
+  // ];
 
-  // Filter content based on search query
-  const filteredContent = websiteContent.filter(item =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.content.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // // Filter content based on search query
+  // const filteredContent = websiteContent.filter(item =>
+  //   item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //   item.content.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
 
   return (
     <div>
@@ -86,7 +87,7 @@ export function Customer() {
 
       <div className="right">
         <br /><br />
-        <div className="d-flex justify-content-around">
+        {/* <div className="d-flex justify-content-around">
           {filteredContent.map(item => (
             <Card key={item.title} style={{ width: '18rem' }} className='card1'>
               <Card.Body>
@@ -96,7 +97,8 @@ export function Customer() {
               </Card.Body>
             </Card>
           ))}
-        </div>
+        </div> */}
+        <CustomerData />
       </div>
     </div>
   );

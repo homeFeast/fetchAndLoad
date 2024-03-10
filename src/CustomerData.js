@@ -1,12 +1,11 @@
-// SellerData.js
+// CustomerData.js
 
 'use client';
 import { db } from './Firebase';
 import React, { useEffect, useState } from 'react';
 import { getDocs, collection } from 'firebase/firestore';
-import Seller from "./Seller"
-import Random from './Random';
-import CardC from "./CardC"
+import Customer from "./Customer"
+import CardS from "./CardS"
 // Function to fetch data from Firestore
 async function fetchDataFromFirestore() {
 
@@ -25,7 +24,7 @@ async function fetchDataFromFirestore() {
 // export default fetchDataFromFirestore;
 
 // React component
-export default function SellerData() {
+export default function CustomerData() {
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
@@ -43,12 +42,12 @@ export default function SellerData() {
 
   return (
     <main>
-      <div className='card1'>
+      <div>
 
         {
         userData.map((userDataItem) => (
           <>
-          <CardC userDataItem={userDataItem} className='card1'/>
+          <CardS userDataItem={userDataItem}/>
 
           </>
         ))}

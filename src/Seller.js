@@ -3,71 +3,69 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Random from './Random';
+import CardC from "./CardC"
+import SellerData from "./SellerData"
+
 
 export function Seller() {
+  //{userDataItem}
+  // console.log(typeof userDataItem);
   const [searchQuery, setSearchQuery] = useState('');
+
   
   // Dummy data representing different sections of the website
-  const websiteContent = [
-    {
-      title: 'Home',
-      content: 'Welcome to our website! This is the home page content.'
-    },
-    {
-      title: 'About',
-      content: 'Learn more about us and our mission.'
-    },
-    {
-      title: 'Portfolio',
-      content: 'Explore our portfolio showcasing our work.'
-    },
-    {
-      title: 'Contact',
-      content: 'Get in touch with us for inquiries or feedback.'
-    },
-    {
-      title: 'Feedback',
-      content: 'Leave us your feedback and suggestions.'
-    }
-  ];
+  // const websiteContent= 
+  // [
+  //   {
+  //     title: userDataItem.email,
+  //     content: userDataItem.role,
+  //     address:userDataItem.address,
+  //     number:userDataItem.number
+  //   }
+  // ];
 
   // Filter content based on search query
-  const filteredContent = websiteContent.filter(itemSeller =>
-    itemSeller.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    itemSeller.content.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // const filteredContent = websiteContent.filter(item =>
+  //   item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //   item.content.toLowerCase().includes(searchQuery.toLowerCase())||
+  //   item.address.toLowerCase().includes(searchQuery.toLowerCase())||
+  //   item.number.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
 
+  // const properties = Object.keys(userDataItem);
+
+  // // Filter content based on search query using userDataItem
+  // const filteredContent = properties.map(property => ({
+  //   title: property,
+  //   content:userDataItem[property]
+  // })).filter(item =>
+  //   item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //   item.content.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+  
   return (
     <div>
       <Navbar expand="lg" className="bg-body-tertiary topnav">
         <Container fluid>
           <Navbar.Brand href="#">Home Feast</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0 justify-content-center"
-              style={{ maxHeight: '100px' }}
-              navbarScroll
-            >
-              <Nav.Link href="#action1">Regular</Nav.Link>
-              <Nav.Link href="#action2">Mess</Nav.Link>
-            </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Navbar.Collapse>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+          <a href=''><box-icon name='user' type='solid' color='#111'></box-icon></a>
         </Container>
       </Navbar>
 
@@ -76,30 +74,41 @@ export function Seller() {
           <header id="header">
             <nav id="navbar" className="nav-menu navbar">
               <ul>
-                <h4>Order Details</h4>
-                <h4>Navigation</h4>
-                <h4>Take a Break</h4>
-                <h4>Customer Details</h4>
+                <a href=''>Order Details</a>
+                <a href=''>Navigation</a>
+                <a href=''>Take a Break</a>
+                <a href=''>Customer Details</a>
               </ul>
             </nav>
           </header>
         </div>
       </div>
 
-      <div className="Right--Seller">
+      <div className="right">
         <br /><br />
-        <div className="d-flex justify-content-around">
-          {filteredContent.map(itemSeller => (
-            <Card key={itemSeller.title} style={{ width: '18rem' }} className='card1'>
+        <SellerData />
+        {/* <div className="d-flex justify-content-around" style={{ overflowX: 'auto' }}> */}
+          {/* {filteredContent.map(item => (
+            <Card key={item.title} style={{ width: '18rem' }} className='card1'>
               <Card.Body>
-                <Card.Title>{itemSeller.title}</Card.Title>
-                <Card.Text>{itemSeller.content}</Card.Text>
+                <Card.Title>{item.title}</Card.Title>
+                <Card.Text>{item.content}<br></br>
+                {item.address}<br></br>
+                {item.number}<br></br>
+                </Card.Text>
                 <Button variant="primary" className='button-31'>Go somewhere</Button>
               </Card.Body>
+             
             </Card>
-          ))}
+          ))} */}
+        {/* </div> */}
+
+        <div className='Rand'>
+          <h1>Hello</h1>
         </div>
       </div>
     </div>
   );
 }
+export default Seller;
+

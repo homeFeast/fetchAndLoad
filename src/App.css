@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 .card1 {
@@ -111,6 +112,13 @@
   background-size: cover;
   color: black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+
+}
+.Rand{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
 }
